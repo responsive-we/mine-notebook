@@ -11,7 +11,7 @@ function Notes() {
     <div className="row my-3">
     { notes.map((note)=>{
       return <Noteitem key={note._id} title={note.title}
-      description={note.description} tags={note.tags}/>
+      description={note.description} _id={note._id} tags={note.tags}/>
     })}
    </div>
    </>
