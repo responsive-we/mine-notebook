@@ -12,7 +12,6 @@ function Addnote() {
   const handleClick = (e)=>{
       e.preventDefault();
       addNote(note.title, note.description, note.tag);
-      setNote({title: "", description: "", tag: ""})
   }
 
   const onChange = (e)=>{
@@ -28,7 +27,7 @@ function Addnote() {
             <Form.Control
             name="title"
               type="text"
-              onChange={onchange}
+              onChange={onChange}
               placeholder="Title"
             />
           </Form.Group>
@@ -39,7 +38,7 @@ function Addnote() {
 
             name="description"
               as="textarea"
-              onChange={onchange}
+              onChange={onChange}
               placeholder="Description"
             />
           </Form.Group>
