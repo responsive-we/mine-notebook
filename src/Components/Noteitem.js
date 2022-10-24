@@ -1,7 +1,11 @@
 import { Card, Badge } from "react-bootstrap";
+import { useContext } from "react";
+import noteContext from "../context/Notes/noteContext";
 
 function Noteitem(props) {
-  const {title,description,tags} = props;
+  const context = useContext(noteContext);
+  const {deleteNote} = context;
+  const {title,description,tags,_id} = props;
     return (
     <div className="col-md-3 my-3 view">
       <Card>
@@ -14,7 +18,7 @@ function Noteitem(props) {
           <Card.Title>{title}</Card.Title>
           <Card.Text>{description}</Card.Text>
           <div className="d-flex">
-          <i className="fa-solid fa-trash"></i> 
+          <i className="fa-solid fa-trash" onClick={()=>{deleteNote(_id)}}></i>
           <i className="fa-solid fa-pen-to-square"></i>
           </div>
         </Card.Body>
